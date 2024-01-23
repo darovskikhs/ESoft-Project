@@ -543,14 +543,17 @@
         </Setter>
     </Style>
 
-    <Style x:Key="dgStyle" TargetType="DataGrid">
+    <!--Оформление для заголовка DataGrid-->
+    <!--<Style x:Key="dgcStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground"  Value="#FFFFFF"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="DataGrid">
-                    <Border Background="#202636"
-                            CornerRadius="20"/>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <Border Background="Transparent"
+                            BorderBrush="#F27059"
+                            BorderThickness="0,0,0,2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 </ResourceDictionary>

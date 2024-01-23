@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles/UIColors.xaml"/>
                 <ResourceDictionary Source="Styles/MainWindowStyle.xaml"/>
                 <ResourceDictionary Source="Styles/TaskStyle.xaml"/>
+                <ResourceDictionary Source="Styles/DataGridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary> 
     </Application.Resources>

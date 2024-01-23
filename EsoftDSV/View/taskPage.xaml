@@ -166,12 +166,11 @@
                  Height="540"
                  Width="630">
 
-            <DataGrid x:Name="dgTasks"
-                      Height="520"
-                      Width="610"
-                      Style="{StaticResource dgStyle}">
-
-                <DataGridTextColumn Header="Task"/>
+            <DataGrid Style="{DynamicResource dgStyle}"
+                      CellStyle="{DynamicResource dgCellStyle}"
+                      ColumnHeaderStyle="{DynamicResource dgColumnHeaderStyle}"
+                      RowStyle="{DynamicResource dgRowStyle}"
+                      x:Name="dgTasks">
 
             </DataGrid>
             
