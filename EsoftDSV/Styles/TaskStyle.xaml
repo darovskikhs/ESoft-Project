@@ -1,0 +1,556 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+
+    <!--Оформление кнопки очистки заданных фильтров таблицы-->
+    <Style x:Key="btnClear" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        <Border.Background>
+                            <SolidColorBrush Color="#6EB5FF" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#6EB5FF"
+                                                    To="#47A1FF"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#47A1FF"
+                                                    To="#6EB5FF"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Оформление MenuItem "Status"-->
+    <Style x:Key="miStatusStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                            Background="#202636"
+                            BorderThickness="0"
+                            CornerRadius="10">
+                        <Grid>
+                            <!--Картинка-->
+                            <fa:IconImage     Icon="CheckSquare"
+                                              Foreground="{StaticResource mainTextColor01}"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Height="15"
+                                              Width="15"
+                                              Margin="7,0,0,0"/>
+
+                            <!--Текст-->
+                            <ContentPresenter ContentSource="Header"
+                                              TextBlock.Foreground="{StaticResource mainTextColor01}"
+                                              TextBlock.FontFamily="Microsoft YaHei UI"
+                                              TextBlock.FontSize="16"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Margin="40,0,0,0"/>
+
+                            <!--Галочка раскрывания списка-->
+                            <fa:IconImage Icon="SortDown"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Center"
+                                          Foreground="{StaticResource mainTextColor01}"
+                                          Height="8"
+                                          Width="8"
+                                          Margin="0,0,7,0"/>
+
+                            <Popup x:Name="PART_Popup"
+                                   AllowsTransparency="True"
+                                   IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Placement="Bottom"
+                                   PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                <Border x:Name="SubMenuBorder"
+                                        Background="#10131B"
+                                        Width="170"
+                                        Height="160"
+                                        CornerRadius="0,0,10,10">
+
+                                    <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                      Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                        <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                            <Canvas HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top" />
+
+                                            <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                        </Grid>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Оформление MenuItem "Executors"-->
+    <Style x:Key="miExecutorsStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                            Background="#202636"
+                            BorderThickness="0"
+                            CornerRadius="10">
+                        <Grid>
+                            <!--Картинка-->
+                            <fa:IconImage     Icon="Users"
+                                              Foreground="{StaticResource mainTextColor01}"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Height="15"
+                                              Width="15"
+                                              Margin="7,0,0,0"/>
+
+                            <!--Текст-->
+                            <ContentPresenter ContentSource="Header"
+                                              TextBlock.Foreground="{StaticResource mainTextColor01}"
+                                              TextBlock.FontFamily="Microsoft YaHei UI"
+                                              TextBlock.FontSize="16"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Margin="40,0,0,0"/>
+
+                            <!--Галочка раскрывания списка-->
+                            <fa:IconImage Icon="SortDown"
+                                          HorizontalAlignment="Right"
+                                          VerticalAlignment="Center"
+                                          Foreground="{StaticResource mainTextColor01}"
+                                          Height="8"
+                                          Width="8"
+                                          Margin="0,0,7,0"/>
+
+                            <Popup x:Name="PART_Popup"
+                                   AllowsTransparency="True"
+                                   IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Placement="Bottom"
+                                   PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                <Border x:Name="SubMenuBorder"
+                                        Background="#10131B"
+                                        Width="170"
+                                        Height="265"
+                                        CornerRadius="0,0,10,10">
+
+                                    <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                      Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                        <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                            <Canvas HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top" />
+
+                                            <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                        </Grid>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Крайнее подменю MenuItem'а-->
+    <Style x:Key="lsmiStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                CornerRadius="0,0,10,10"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0" />
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#F94144"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#F94144"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Первое подменю MenuItem'а-->
+    <Style x:Key="fsmiStyle" TargetType="MenuItem">
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                CornerRadius="10,10,0,0"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#F9C74F"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#F9C74F"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Третье подменю MenuItem'а-->
+    <Style x:Key="tsmiStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#90BE6D"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#90BE6D"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Второе подменю MenuItem'а-->
+    <Style x:Key="ssmiStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#9F86C0"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#9F86C0"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Первое подменю Executor'а-->
+    <Style x:Key="femiStyle" TargetType="MenuItem">
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                CornerRadius="10,10,0,0"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#363B4A"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#363B4A"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Основные подменю Executor'а-->
+    <Style x:Key="memiStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#363B4A"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#363B4A"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Крайнее подменю Executor'а-->
+    <Style x:Key="lemiStyle" TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="border"
+                                CornerRadius="0,0,10,10"
+                                BorderThickness="0">
+                        <Grid>
+                            <!--// Text //-->
+                            <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#FFFFFF"
+                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0"/>
+                        </Grid>
+                        <Border.Background>
+                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#202636"
+                                                    To="#363B4A"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#363B4A"
+                                                    To="#202636"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="dgStyle" TargetType="DataGrid">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGrid">
+                    <Border Background="#202636"
+                            CornerRadius="20"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Основные цвета интфейса-->
+    <SolidColorBrush x:Key="mainColor01" Color="#191E2B"/>
+    <SolidColorBrush x:Key="mainColor012" Color="#10131B"/>
+    <SolidColorBrush x:Key="mainColor013" Color="#12151F"/>
+    <SolidColorBrush x:Key="mainColor02" Color="#202636"/>
+    <SolidColorBrush x:Key="mainColor03" Color="#363B4A"/>
+    <SolidColorBrush x:Key="mainColor04" Color="#4C515E"/>
+    <SolidColorBrush x:Key="mainColor05" Color="#5E667A"/>
+    
+    <!--Основные цвета текста-->
+    <SolidColorBrush x:Key="mainTextColor01" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="mainTextColor02" Color="#FFFAFA"/>
+    <SolidColorBrush x:Key="mainTextColor03" Color="#CFCFCF"/>
+    <SolidColorBrush x:Key="mainTextColor04" Color="#D7DAE0"/>
+    <SolidColorBrush x:Key="mainTextColor05" Color="#848CA0"/>
+
+    <!--Акцентирующие цвета текста-->
+    <SolidColorBrush x:Key="accentTextColor01" Color="#AFCBFF"/>
+    <SolidColorBrush x:Key="accentTextColor02" Color="#6EB5FF"/>
+
+</ResourceDictionary>
