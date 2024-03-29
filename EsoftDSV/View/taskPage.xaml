@@ -164,42 +164,35 @@
                 CornerRadius="20"
                 Margin="0,60,0,0"
                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center"
-                 Height="540"
-                 Width="630">
+                VerticalAlignment="Center"
+                Height="540"
+                Width="630">
 
-            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"
-                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
-                      Style="{DynamicResource DataGridStyle1}"
+            <DataGrid RowStyle="{DynamicResource rowStyle}"
+                      ColumnHeaderStyle="{DynamicResource chStyle}"
+                      Style="{DynamicResource dgStyle}"
                       x:Name="dgTasks"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
-                      ItemsSource="{Binding}"
-                      RenderTransformOrigin="0.5,0.5"
                       Margin="10">
-                
+
                 <DataGrid.Columns>
                     
                     <DataGridTextColumn Header="Task"
                                         Binding="{Binding Title}"
-                                        Width="330"
+                                        Width="380"
                                         CanUserResize="False"/>
                     
                     <DataGridTextColumn Header="Status"
                                         Binding="{Binding Status}"
-                                        Width="85"
-                                        CanUserResize="False"/>
-                    
-                    <DataGridTextColumn Header="Executor"
-                                        Binding="{Binding Executor.User.MiddleName}"
                                         Width="100"
                                         CanUserResize="False"/>
 
-                    <DataGridTextColumn Header="Manager"
-                                        Width="100"
-                                        Binding="{Binding Manager.User.MiddleName}"
+                    <DataGridTextColumn Header="Executor"
+                                        Binding="{Binding Executor.User.MiddleName}"
+                                        Width="120"
                                         CanUserResize="False"/>
-                    
+
                 </DataGrid.Columns>
                 
             </DataGrid>
