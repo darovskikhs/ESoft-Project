@@ -13,26 +13,34 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True">
+    
     <Grid>
 
         <Border CornerRadius="20">
 
             <Border.Background>
+                
                 <ImageBrush ImageSource="/Images/background.jpg"/>
+                
             </Border.Background>
 
             <Grid>
 
                 <Grid.RowDefinitions>
+                    
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
+                    
                 </Grid.RowDefinitions>
 
                 <Grid>
+                    
                     <Grid.ColumnDefinitions>
+                        
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="40"/>
                         <ColumnDefinition Width="40"/>
+                        
                     </Grid.ColumnDefinitions>
 
                     <Button x:Name="btnMinimize"
@@ -45,10 +53,12 @@
                             Style="{DynamicResource btnMinimizeLogin}"
                             Click="btnMinimize_Click"
                             Grid.Column="1">
+                        
                         <fa:IconImage Icon="WindowMinimize"
                                       Height="15"
                                       Width="15"
                                       Foreground="{StaticResource mainTextColor01}"/>
+                        
                     </Button>
 
                     <Button x:Name="btnClose"
@@ -61,10 +71,12 @@
                             Style="{DynamicResource btnCloseLogin}"
                             Click="btnClose_Click"
                             Grid.Column="2">
+                        
                         <fa:IconImage Icon="Close"
                                       Height="15"
                                       Width="15"
                                       Foreground="{StaticResource mainTextColor01}"/>
+                        
                     </Button>
 
                 </Grid>
@@ -87,10 +99,9 @@
                                     Margin="0,0,0,15">
 
                             <TextBlock Text="ESoft"
-                                   FontFamily="Microsoft YaHei UI"
+                                   FontFamily="/FontRubik/#Rubik Bold"
                                    FontSize="26"
                                    Margin="16,35,5,0"
-                                   FontWeight="Bold"
                                    Foreground="{StaticResource mainTextColor01}"/>
 
                             <Image Source="/Images/id02.png"
@@ -116,19 +127,22 @@
                                  Height="40" Width="240"
                                  Padding="40,0,0,0"
                                  Background="{StaticResource mainTextColor02}"
-                                 FontFamily="Microsoft YaHei UI"
+                                 FontFamily="/FontRubik/#Rubik Bold"
                                  FontSize="14"
-                                 FontWeight="Bold"
                                  Foreground="{StaticResource mainColor01}"
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center">
 
                                 <TextBox.Resources>
+                                    
                                     <Style TargetType="{x:Type Border}">
                                         <Setter Property="CornerRadius" Value="15"/>
                                     </Style>
+                                    
                                 </TextBox.Resources>
+                                
                             </TextBox>
+                            
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal"
@@ -145,18 +159,21 @@
                                      Height="40" Width="240"
                                      Padding="40,0,0,0"
                                      Background="{StaticResource mainTextColor02}"
-                                     FontFamily="Microsoft YaHei UI"
+                                     FontFamily="/FontRubik/#Rubik Bold"
                                      FontSize="14"
                                      Foreground="{StaticResource mainColor01}"
                                      HorizontalContentAlignment="Left"
                                      VerticalContentAlignment="Center">
+                                
                                 <PasswordBox.Style>
                                     <Style TargetType="{x:Type PasswordBox}">
+                                        
                                         <Style.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="15" />
                                             </Style>
                                         </Style.Resources>
+                                        
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type PasswordBox}">
@@ -171,6 +188,7 @@
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
+                                        
                                         <Style.Triggers>
                                             <MultiTrigger>
                                                 <MultiTrigger.Conditions>
@@ -180,8 +198,10 @@
                                                 <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
                                             </MultiTrigger>
                                         </Style.Triggers>
+                                        
                                     </Style>
                                 </PasswordBox.Style>
+                                
                             </PasswordBox>
 
                         </StackPanel>
@@ -191,8 +211,8 @@
                                 Height="40" Width="240"
                                 Content="LOG IN"
                                 Cursor="Hand"
-                                FontFamily="Microsoft YaHei UI"
-                                FontWeight="Black"
+                                FontFamily="/FontRubik/#Rubik Medium"
+                                FontSize="12"
                                 Style="{DynamicResource btnLogin}"
                                 Click="btnLogin_Click">
 
@@ -202,8 +222,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    Foreground="{StaticResource mainTextColor01}"
-                                   FontFamily="Microsoft YaHei UI"
-                                   FontWeight="Bold"/>
+                                   FontFamily="/FontRubik/#Rubik Medium"/>
 
                     </StackPanel>
 
@@ -214,4 +233,5 @@
         </Border>
         
     </Grid>
+    
 </Window>

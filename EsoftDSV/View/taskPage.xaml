@@ -119,7 +119,7 @@
         <TextBox x:Name="tbSearch"
                  Background="{StaticResource mainTextColor02}"
                  Foreground="{StaticResource  mainColor01}"
-                 FontFamily="Microsoft YaHei UI"
+                 FontFamily="/FontRubik/#Rubik Regular"
                  FontWeight="Bold"
                  FontSize="13"
                  HorizontalContentAlignment="Left"
@@ -132,9 +132,11 @@
                  Height="30">
             
             <TextBox.Resources>
+                
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
+                
             </TextBox.Resources>
             
         </TextBox>
@@ -166,14 +168,42 @@
                  Height="540"
                  Width="630">
 
-            <DataGrid Style="{DynamicResource dgStyle}"
-                      CellStyle="{DynamicResource dgCellStyle}"
-                      ColumnHeaderStyle="{DynamicResource dgColumnHeaderStyle}"
-                      RowStyle="{DynamicResource dgRowStyle}"
-                      x:Name="dgTasks">
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                      Style="{DynamicResource DataGridStyle1}"
+                      x:Name="dgTasks"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding}"
+                      RenderTransformOrigin="0.5,0.5"
+                      Margin="10">
+                
+                <DataGrid.Columns>
+                    
+                    <DataGridTextColumn Header="Task"
+                                        Binding="{Binding Title}"
+                                        Width="330"
+                                        CanUserResize="False"/>
+                    
+                    <DataGridTextColumn Header="Status"
+                                        Binding="{Binding Status}"
+                                        Width="85"
+                                        CanUserResize="False"/>
+                    
+                    <DataGridTextColumn Header="Executor"
+                                        Binding="{Binding Executor.User.MiddleName}"
+                                        Width="100"
+                                        CanUserResize="False"/>
 
+                    <DataGridTextColumn Header="Manager"
+                                        Width="100"
+                                        Binding="{Binding Manager.User.MiddleName}"
+                                        CanUserResize="False"/>
+                    
+                </DataGrid.Columns>
+                
             </DataGrid>
-            
+
         </Border>
 
     </Grid>

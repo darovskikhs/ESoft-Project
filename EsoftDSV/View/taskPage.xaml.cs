@@ -23,6 +23,7 @@ namespace EsoftDSV.View
         public taskPage()
         {
             InitializeComponent();
+            dgTasks.ItemsSource = user10Entities.GetContext().Task.ToList();
         }
     }
 }

@@ -69,7 +69,7 @@
                             <!--Текст-->
                             <ContentPresenter ContentSource="Header"
                                               TextBlock.Foreground="{StaticResource mainTextColor01}"
-                                              TextBlock.FontFamily="Microsoft YaHei UI"
+                                              TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                               TextBlock.FontSize="16"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
@@ -139,7 +139,7 @@
                             <!--Текст-->
                             <ContentPresenter ContentSource="Header"
                                               TextBlock.Foreground="{StaticResource mainTextColor01}"
-                                              TextBlock.FontFamily="Microsoft YaHei UI"
+                                              TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                               TextBlock.FontSize="16"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
@@ -199,7 +199,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -251,7 +251,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -301,7 +301,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -351,7 +351,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -403,7 +403,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -453,7 +453,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -504,7 +504,7 @@
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                   TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="Microsoft YaHei UI"
+                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
                                                   TextBlock.FontSize="15"
                                                   HorizontalAlignment="Left"
                                                   VerticalAlignment="Center"
@@ -542,18 +542,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <!--Оформление для заголовка DataGrid-->
-    <!--<Style x:Key="dgcStyle" TargetType="DataGridColumnHeader">
-        <Setter Property="Foreground"  Value="#FFFFFF"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="DataGridColumnHeader">
-                    <Border Background="Transparent"
-                            BorderBrush="#F27059"
-                            BorderThickness="0,0,0,2"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
+    
 </ResourceDictionary>

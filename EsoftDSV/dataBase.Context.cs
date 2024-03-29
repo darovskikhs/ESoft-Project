@@ -15,9 +15,17 @@ namespace EsoftDSV
     
     public partial class user10Entities : DbContext
     {
+        private static user10Entities _context;
         public user10Entities()
             : base("name=user10Entities")
         {
+        }
+
+        public static user10Entities GetContext()
+        {
+            if(_context == null )
+                _context = new user10Entities();
+            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
