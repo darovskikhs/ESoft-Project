@@ -99,6 +99,9 @@
     <Compile Include="User.cs">
       <DependentUpon>dataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\addEditTaskWindow.xaml.cs">
+      <DependentUpon>addEditTaskWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\generalPage.xaml.cs">
       <DependentUpon>generalPage.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\addEditTaskStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\DataGridStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addEditTaskWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

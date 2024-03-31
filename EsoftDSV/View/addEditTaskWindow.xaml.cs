@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace EsoftDSV.View
 {
     /// <summary>
-    /// Логика взаимодействия для taskPage.xaml
+    /// Логика взаимодействия для addEditTaskWindow.xaml
     /// </summary>
-    public partial class taskPage : Page
+    public partial class addEditTaskWindow : Window
     {
-        public taskPage()
+        public addEditTaskWindow()
         {
             InitializeComponent();
-            dgTasks.ItemsSource = user10Entities.GetContext().Task.ToList();
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
+            cboxExecutor.ItemsSource = user10Entities.GetContext().Executor.ToList();
         }
     }
 }

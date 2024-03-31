@@ -47,6 +47,144 @@
         </Setter>
     </Style>
     
+    <!--Оформление кнопки добавления задачи-->
+
+    <Style x:Key="btnAdd" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        <Border.Background>
+                            <SolidColorBrush Color="#90BE6D" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#90BE6D"
+                                                    To="#739857"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#739857"
+                                                    To="#90BE6D"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Оформление кнопки редактирования задачи-->
+
+    <Style x:Key="btnEdit" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        <Border.Background>
+                            <SolidColorBrush Color="#F9C74F" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#F9C74F"
+                                                    To="#C79F3F"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#C79F3F"
+                                                    To="#F9C74F"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Оформление кнопки удаления задачи-->
+
+    <Style x:Key="btnDelete" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        <Border.Background>
+                            <SolidColorBrush Color="#F94144" x:Name="BorderBackground"/>
+                        </Border.Background>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#F94144"
+                                                    To="#C73436"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#C73436"
+                                                    To="#F94144"
+                                                    Duration="0:0:0:0.2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Оформление MenuItem "Status"-->
     <Style x:Key="miStatusStyle" TargetType="MenuItem">
         <Setter Property="Template">
@@ -389,158 +527,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <!--Первое подменю Executor'а-->
-    <Style x:Key="femiStyle" TargetType="MenuItem">
-        <Setter Property="Margin" Value="0,10,0,0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="MenuItem">
-                    <Border x:Name="border"
-                                CornerRadius="10,10,0,0"
-                                BorderThickness="0">
-                        <Grid>
-                            <!--// Text //-->
-                            <ContentPresenter ContentSource="Header"
-                                                  TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
-                                                  TextBlock.FontSize="15"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center"
-                                                  Margin="35,0,0,0"/>
-                        </Grid>
-                        <Border.Background>
-                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
-                        </Border.Background>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#202636"
-                                                    To="#363B4A"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#363B4A"
-                                                    To="#202636"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <!--Основные подменю Executor'а-->
-    <Style x:Key="memiStyle" TargetType="MenuItem">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="MenuItem">
-                    <Border x:Name="border"
-                                BorderThickness="0">
-                        <Grid>
-                            <!--// Text //-->
-                            <ContentPresenter ContentSource="Header"
-                                                  TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
-                                                  TextBlock.FontSize="15"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center"
-                                                  Margin="35,0,0,0"/>
-                        </Grid>
-                        <Border.Background>
-                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
-                        </Border.Background>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#202636"
-                                                    To="#363B4A"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#363B4A"
-                                                    To="#202636"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <!--Крайнее подменю Executor'а-->
-    <Style x:Key="lemiStyle" TargetType="MenuItem">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="MenuItem">
-                    <Border x:Name="border"
-                                CornerRadius="0,0,10,10"
-                                BorderThickness="0">
-                        <Grid>
-                            <!--// Text //-->
-                            <ContentPresenter ContentSource="Header"
-                                                  TextBlock.Foreground="#FFFFFF"
-                                                  TextBlock.FontFamily="/FontRubik/#Rubik Regular"
-                                                  TextBlock.FontSize="15"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center"
-                                                  Margin="35,0,0,0"/>
-                        </Grid>
-                        <Border.Background>
-                            <SolidColorBrush Color="#202636" x:Name="BorderBackground"/>
-                        </Border.Background>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#202636"
-                                                    To="#363B4A"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
-                                                    Storyboard.TargetProperty="Color"
-                                                    From="#363B4A"
-                                                    To="#202636"
-                                                    Duration="0:0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
+
 </ResourceDictionary>

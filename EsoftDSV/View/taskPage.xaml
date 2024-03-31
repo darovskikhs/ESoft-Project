@@ -34,13 +34,13 @@
                           Width="150"
                           Height="30"
                           Cursor="Hand">
-                    
+
                     <MenuItem Header="Planned"
                               Style="{StaticResource fsmiStyle}"
                               Height="35"
                               Width="150"
                               Cursor="Hand"/>
-                    
+
                     <MenuItem Header="Execute"
                               Style="{StaticResource ssmiStyle}"
                               Height="35"
@@ -60,58 +60,6 @@
                               Cursor="Hand"/>
                 </MenuItem>
 
-                <MenuItem x:Name="miExecutor"
-                          Header="Executors"
-                          Style="{StaticResource miExecutorsStyle}"
-                          Margin="0,0,0,0"
-                          Width="150"
-                          Height="30"
-                          Cursor="Hand">
-
-                    <MenuItem Header="1"
-                              Style="{StaticResource femiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="2"
-                              Style="{StaticResource memiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="3"
-                              Style="{StaticResource memiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="4"
-                              Style="{StaticResource memiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="5"
-                              Style="{StaticResource memiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="6"
-                              Style="{StaticResource memiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-
-                    <MenuItem Header="7"
-                              Style="{StaticResource lemiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-                    
-                </MenuItem>
-                
             </Menu>
             
         </Border>
@@ -126,9 +74,9 @@
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Top"
-                 Margin="170,20,0,0"
+                 Margin="-110,20,0,0"
                  Padding="5,0,0,0"
-                 Width="150"
+                 Width="180"
                  Height="30">
             
             <TextBox.Resources>
@@ -142,21 +90,79 @@
         </TextBox>
 
         <Button x:Name="btnClear"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Style="{StaticResource btnClear}"
-                    Margin="365,20,0,0"
-                    Height="30"
-                    Width="30"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    BorderThickness="0"
-                    Cursor="Hand">
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Style="{StaticResource btnClear}"
+                Margin="120,20,0,0"
+                Height="30"
+                Width="30"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                Cursor="Hand">
 
             <fa:IconImage Icon="FilterCircleXmark"
-                              Height="20"
-                              Width="20"
-                              Foreground="{StaticResource mainTextColor01}"/>
+                          Height="20"
+                          Width="20"
+                          Foreground="{StaticResource mainTextColor01}"/>
+
+        </Button>
+
+        <Button x:Name="btnAdd"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Style="{StaticResource btnAdd}"
+                Margin="200,20,0,0"
+                Height="30"
+                Width="30"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnAdd_Click">
+
+            <fa:IconImage Icon="Plus"
+                          Height="20"
+                          Width="20"
+                          Foreground="{StaticResource mainTextColor01}"/>
+
+        </Button>
+
+        <Button x:Name="btnEdit"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Style="{StaticResource btnEdit}"
+                Margin="280,20,0,0"
+                Height="30"
+                Width="30"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                Cursor="Hand">
+
+            <fa:IconImage Icon="Edit"
+                          Height="20"
+                          Width="20"
+                          Foreground="{StaticResource mainTextColor01}"/>
+
+        </Button>
+
+        <Button x:Name="btnDelete"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Style="{StaticResource btnDelete}"
+                Margin="360,20,0,0"
+                Height="30"
+                Width="30"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                Cursor="Hand">
+
+            <fa:IconImage Icon="Trash"
+                          Height="20"
+                          Width="20"
+                          Foreground="{StaticResource mainTextColor01}"/>
 
         </Button>
 

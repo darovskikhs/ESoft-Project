@@ -1,0 +1,101 @@
+﻿<Window x:Class="EsoftDSV.View.addEditTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EsoftDSV.View"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="addEditTaskWindow"
+        Height="600" Width="600"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="20"
+            Background="{StaticResource mainColor012}">
+
+        <StackPanel Margin="30"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left">
+
+            <TextBox x:Name="tboxTitle"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Title"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxDesc"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Description"
+                     Height="60" Width="300"
+                     Padding="10,0"
+                     TextWrapping="Wrap"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <DatePicker Style="{DynamicResource dpAddEdit}"
+                        Tag="Deadline"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <DatePicker Style="{DynamicResource dpAddEdit}"
+                        Tag="Completed date"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxDifficulty"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Difficulty"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxTime"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Time"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <ComboBox x:Name="cboxExecutor"
+                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Height="30"
+                      Cursor="Hand"/>
+
+        </StackPanel>
+
+    </Border>
+    
+</Window>
