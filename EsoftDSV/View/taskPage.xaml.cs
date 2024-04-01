@@ -28,7 +28,8 @@ namespace EsoftDSV.View
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            addEditTaskWindow addEditTaskWindow = new addEditTaskWindow();
+            addEditTaskWindow.Show();
         }
     }
 }

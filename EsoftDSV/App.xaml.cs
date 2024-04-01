@@ -13,5 +13,9 @@ namespace EsoftDSV
     /// </summary>
     public partial class App : Application
     {
+        public static user10Entities _context
+            { get; } = new user10Entities();
+
+        public static User currentUser = null;
     }
 }

@@ -42,7 +42,20 @@ namespace EsoftDSV.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            var currentUser = App._context.User.FirstOrDefault(p => p.Login == tboxUser.Text && p.Password == tboxPassword.Password);
 
+            if (currentUser != null)
+            {
+                App.currentUser = currentUser;
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Пользователь с такими данными не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

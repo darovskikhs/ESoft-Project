@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,21 @@ namespace EsoftDSV.View
     /// </summary>
     public partial class addEditTaskWindow : Window
     {
+        private user10Entities _context = new user10Entities();
+        private List<string> listUsers = new List<string>();
         public addEditTaskWindow()
         {
             InitializeComponent();
-            cboxExecutor.ItemsSource = user10Entities.GetContext().Executor.ToList();
+            foreach (var user in _context.User.ToList())
+            {
+                listUsers.Add(user.GetFullName());
+            }
+            cboxExecutor.ItemsSource = listUsers;
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

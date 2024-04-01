@@ -24,5 +24,10 @@ namespace EsoftDSV
     
         public virtual Executor Executor { get; set; }
         public virtual Manager Manager { get; set; }
+
+        public string GetFullName()
+        {
+            return MiddleName + " " + FirstName + " " + LastName;
+        }
     }
 }

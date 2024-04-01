@@ -7,7 +7,7 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="addEditTaskWindow"
-        Height="600" Width="600"
+        Height="480" Width="600"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
@@ -92,7 +92,75 @@
             <ComboBox x:Name="cboxExecutor"
                       Style="{StaticResource ComboBoxFlatStyle}"
                       Height="30"
+                      Tag="Executor"
                       Cursor="Hand"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <ComboBox x:Name="cboxStatus"
+                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Height="30"
+                      Cursor="Hand">
+                
+                <ComboBoxItem x:Name="Planned"
+                              Content="Planned"/>
+                
+                <ComboBoxItem x:Name="Execute"
+                              Content="Execute"/>
+                
+                <ComboBoxItem x:Name="Executed"
+                              Content="Executed"/>
+                
+                <ComboBoxItem x:Name="Canceled"
+                              Content="Canceled"/>
+            </ComboBox>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <ComboBox x:Name="cboxNatureOfTheTask"
+                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Height="30"
+                      Cursor="Hand">
+
+                <ComboBoxItem x:Name="AnalysisAndDesign"
+                              Content="Анализ и проектирование"/>
+
+                <ComboBoxItem x:Name="EquipmentInstallation"
+                              Content="Установка оборудования"/>
+
+                <ComboBoxItem x:Name="MaintenanceAndSupport"
+                              Content="Техническое обслуживание и сопровождение"/>
+            </ComboBox>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Height="30">
+
+                <Button x:Name="btnSave"
+                        Content="Save"
+                        Cursor="Hand"
+                        FontFamily="/FontRubik/#Rubik Bold"
+                        FontSize="14"
+                        Style="{StaticResource btnLogin}"
+                        Width="120"/>
+
+                <Separator Width="10"
+                           Visibility="Hidden"/>
+
+                <Button x:Name="btnCancel"
+                        Content="Cancel"
+                        Cursor="Hand"
+                        FontFamily="/FontRubik/#Rubik Bold"
+                        FontSize="14"
+                        Style="{StaticResource btnCancel}"
+                        Width="120"
+                        Click="btnCancel_Click"/>
+
+            </StackPanel>
 
         </StackPanel>
 
