@@ -90,7 +90,7 @@
                        Visibility="Hidden"/>
 
             <ComboBox x:Name="cboxExecutor"
-                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Style="{StaticResource ComboBoxFlatStyleExecutor}"
                       Height="30"
                       Tag="Executor"
                       Cursor="Hand"/>
@@ -99,7 +99,7 @@
                        Visibility="Hidden"/>
 
             <ComboBox x:Name="cboxStatus"
-                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Style="{StaticResource ComboBoxFlatStyleStatus}"
                       Height="30"
                       Cursor="Hand">
                 
@@ -120,7 +120,7 @@
                        Visibility="Hidden"/>
 
             <ComboBox x:Name="cboxNatureOfTheTask"
-                      Style="{StaticResource ComboBoxFlatStyle}"
+                      Style="{StaticResource ComboBoxFlatStyleNatureOfTheTask}"
                       Height="30"
                       Cursor="Hand">
 
