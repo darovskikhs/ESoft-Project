@@ -27,44 +27,41 @@
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top">
 
-                <MenuItem x:Name="miStatus"
-                          Header="Status"
-                          Style="{StaticResource miStatusStyle}"
+                <ComboBox x:Name="cbStatus"
+                          Style="{StaticResource ComboBoxFlatStyleStatus02}"
                           Margin="0,0,7,0"
                           Width="150"
                           Height="30"
-                          Cursor="Hand">
+                          Cursor="Hand"
+                          SelectionChanged="cbStatus_SelectionChanged">
 
-                    <MenuItem Header="Planned"
-                              Style="{StaticResource fsmiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
+                    <ComboBoxItem Content="запланирована"
+                                  x:Name="cbiPlanned"
+                                  Height="35"
+                                  Width="150"/>
 
-                    <MenuItem Header="Execute"
-                              Style="{StaticResource ssmiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
+                    <ComboBoxItem Content="выполняется"
+                                  x:Name="cbiExecute"
+                                  Height="35"
+                                  Width="150"/>
 
-                    <MenuItem Header="Executed"
-                              Style="{StaticResource tsmiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
+                    <ComboBoxItem Content="выполнена"
+                                  x:Name="cbiExecuted"
+                                  Height="35"
+                                  Width="150"/>
 
-                    <MenuItem Header="Canceled"
-                              Style="{StaticResource lsmiStyle}"
-                              Height="35"
-                              Width="150"
-                              Cursor="Hand"/>
-                </MenuItem>
+                    <ComboBoxItem Content="отменена"
+                                  x:Name="cbiCanceled"
+                                  Height="35"
+                                  Width="150"/>
+                </ComboBox>
 
             </Menu>
             
         </Border>
         
         <TextBox x:Name="tbSearch"
+                 TextChanged="tbSearch_TextChanged"
                  Background="{StaticResource mainTextColor02}"
                  Foreground="{StaticResource  mainColor01}"
                  FontFamily="/FontRubik/#Rubik Regular"
@@ -99,7 +96,8 @@
                 Background="Transparent"
                 BorderBrush="Transparent"
                 BorderThickness="0"
-                Cursor="Hand">
+                Cursor="Hand"
+                Click="btnClear_Click">
 
             <fa:IconImage Icon="FilterCircleXmark"
                           Height="20"
@@ -138,7 +136,8 @@
                 Background="Transparent"
                 BorderBrush="Transparent"
                 BorderThickness="0"
-                Cursor="Hand">
+                Cursor="Hand"
+                Click="btnEdit_Click">
 
             <fa:IconImage Icon="Edit"
                           Height="20"
@@ -157,7 +156,8 @@
                 Background="Transparent"
                 BorderBrush="Transparent"
                 BorderThickness="0"
-                Cursor="Hand">
+                Cursor="Hand"
+                Click="btnDelete_Click">
 
             <fa:IconImage Icon="Trash"
                           Height="20"

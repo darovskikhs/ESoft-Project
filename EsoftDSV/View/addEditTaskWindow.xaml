@@ -17,6 +17,7 @@
             Background="{StaticResource mainColor012}">
 
         <StackPanel Margin="30"
+                    Width="400"
                     Orientation="Vertical"
                     HorizontalAlignment="Left">
 
@@ -29,6 +30,7 @@
                      FontSize="14"
                      Foreground="#FFFFFF"
                      HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
                      VerticalContentAlignment="Center"/>
 
             <Separator Height="5"
@@ -44,19 +46,26 @@
                      FontSize="14"
                      Foreground="#FFFFFF"
                      HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
                      VerticalContentAlignment="Center"/>
 
             <Separator Height="5"
                        Visibility="Hidden"/>
 
             <DatePicker Style="{DynamicResource dpAddEdit}"
+                        x:Name="dpDeadline"
+                        Width="300"
+                        HorizontalAlignment="Left"
                         Tag="Deadline"/>
 
             <Separator Height="5"
                        Visibility="Hidden"/>
 
             <DatePicker Style="{DynamicResource dpAddEdit}"
-                        Tag="Completed date"/>
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        x:Name="dpCreateDateTime"
+                        Tag="Create date"/>
 
             <Separator Height="5"
                        Visibility="Hidden"/>
@@ -70,6 +79,7 @@
                      FontSize="14"
                      Foreground="#FFFFFF"
                      HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
                      VerticalContentAlignment="Center"/>
 
             <Separator Height="5"
@@ -84,6 +94,7 @@
                      FontSize="14"
                      Foreground="#FFFFFF"
                      HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
                      VerticalContentAlignment="Center"/>
 
             <Separator Height="5"
@@ -92,7 +103,8 @@
             <ComboBox x:Name="cboxExecutor"
                       Style="{StaticResource ComboBoxFlatStyleExecutor}"
                       Height="30"
-                      Tag="Executor"
+                      Width="300"
+                      HorizontalAlignment="Left"
                       Cursor="Hand"/>
 
             <Separator Height="5"
@@ -101,19 +113,15 @@
             <ComboBox x:Name="cboxStatus"
                       Style="{StaticResource ComboBoxFlatStyleStatus}"
                       Height="30"
+                      Width="300"
+                      HorizontalAlignment="Left"
                       Cursor="Hand">
                 
-                <ComboBoxItem x:Name="Planned"
-                              Content="Planned"/>
+                <ComboBoxItem Content="запланирована"/>
+                <ComboBoxItem Content="выполняется"/>
+                <ComboBoxItem Content="выполнена"/>
+                <ComboBoxItem Content="отменена"/>
                 
-                <ComboBoxItem x:Name="Execute"
-                              Content="Execute"/>
-                
-                <ComboBoxItem x:Name="Executed"
-                              Content="Executed"/>
-                
-                <ComboBoxItem x:Name="Canceled"
-                              Content="Canceled"/>
             </ComboBox>
 
             <Separator Height="5"
@@ -122,16 +130,14 @@
             <ComboBox x:Name="cboxNatureOfTheTask"
                       Style="{StaticResource ComboBoxFlatStyleNatureOfTheTask}"
                       Height="30"
+                      Width="300"
+                      HorizontalAlignment="Left"
                       Cursor="Hand">
 
-                <ComboBoxItem x:Name="AnalysisAndDesign"
-                              Content="Анализ и проектирование"/>
+                <ComboBoxItem Content="анализ и проектирование"/>
+                <ComboBoxItem Content="установка оборудования"/>
+                <ComboBoxItem Content="техническое обслуживание и сопровождение"/>
 
-                <ComboBoxItem x:Name="EquipmentInstallation"
-                              Content="Установка оборудования"/>
-
-                <ComboBoxItem x:Name="MaintenanceAndSupport"
-                              Content="Техническое обслуживание и сопровождение"/>
             </ComboBox>
 
             <Separator Height="5"
@@ -146,13 +152,14 @@
                         FontFamily="/FontRubik/#Rubik Bold"
                         FontSize="14"
                         Style="{StaticResource btnLogin}"
-                        Width="120"/>
+                        Width="120"
+                        Click="btnSave_Click"/>
 
                 <Separator Width="10"
                            Visibility="Hidden"/>
 
                 <Button x:Name="btnCancel"
-                        Content="Cancel"
+                        Content="Close"
                         Cursor="Hand"
                         FontFamily="/FontRubik/#Rubik Bold"
                         FontSize="14"

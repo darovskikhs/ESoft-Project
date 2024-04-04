@@ -60,5 +60,10 @@ namespace EsoftDSV
         {
             mainFrame.Navigate(new View.taskPage());
         }
+
+        private void btnEmployees_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new View.employeesPage());
+        }
     }
 }

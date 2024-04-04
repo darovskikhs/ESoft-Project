@@ -79,7 +79,8 @@
                     <RadioButton Style="{StaticResource btnNavigationMenu}"
                                  x:Name="btnEmployees"
                                  Tag="{StaticResource mainTextColor01}"
-                                 Cursor="Hand">
+                                 Cursor="Hand"
+                                 Click="btnEmployees_Click">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10,0,0,0">
                             <fa:IconImage Icon="Users"

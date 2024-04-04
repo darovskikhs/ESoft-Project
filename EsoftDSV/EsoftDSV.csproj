@@ -90,6 +90,7 @@
     <Compile Include="Executor.cs">
       <DependentUpon>dataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="FMLName.cs" />
     <Compile Include="Manager.cs">
       <DependentUpon>dataBase.tt</DependentUpon>
     </Compile>
@@ -101,6 +102,9 @@
     </Compile>
     <Compile Include="View\addEditTaskWindow.xaml.cs">
       <DependentUpon>addEditTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\employeesPage.xaml.cs">
+      <DependentUpon>employeesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\generalPage.xaml.cs">
       <DependentUpon>generalPage.xaml</DependentUpon>
@@ -152,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\addEditTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\employeesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
