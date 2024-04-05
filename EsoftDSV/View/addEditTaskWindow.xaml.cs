@@ -23,6 +23,7 @@ namespace EsoftDSV.View
         private user10Entities _context = new user10Entities();
         private List<string> listUsers = new List<string>();
         private Task _currentTask = null;
+        private bool isEditing;
 
         public addEditTaskWindow()
         {
@@ -36,10 +37,12 @@ namespace EsoftDSV.View
         public addEditTaskWindow(Task task)
         {
             InitializeComponent();
+            _currentTask = task;
             foreach (var user in _context.User.ToList())
             {
                 listUsers.Add(user.GetFullName());
             }
+            isEditing = true;
             tboxTitle.Text = task.Title;
             tboxDesc.Text = task.Description;
             cboxStatus.Text = task.Status;
@@ -137,10 +140,6 @@ namespace EsoftDSV.View
 
             if (string.IsNullOrWhiteSpace(tboxTitle.Text))
                 errorBuilder.AppendLine("Название задачи обязательно для заполнения;");
-
-            var taskFromDB = App._context.Task.ToList().FirstOrDefault(p => p.Title.ToLower() == tboxTitle.Text.ToLower());
-            if (taskFromDB != null && taskFromDB != _currentTask)
-                errorBuilder.AppendLine("Такая задача уже существует в базе данных;");
 
             float difficultyNumber = 1;
             if (float.TryParse(tboxDifficulty.Text, out difficultyNumber) == false || difficultyNumber > 50 || difficultyNumber < 1)
