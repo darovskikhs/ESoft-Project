@@ -91,6 +91,7 @@
       <DependentUpon>dataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="FMLName.cs" />
+    <Compile Include="GetCurrent.cs" />
     <Compile Include="Manager.cs">
       <DependentUpon>dataBase.tt</DependentUpon>
     </Compile>
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="View\addEditTaskWindow.xaml.cs">
       <DependentUpon>addEditTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\addEditUserWindow.xaml.cs">
+      <DependentUpon>addEditUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\employeesPage.xaml.cs">
       <DependentUpon>employeesPage.xaml</DependentUpon>
@@ -139,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\DataGridStyle02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\LoginStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\addEditTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addEditUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

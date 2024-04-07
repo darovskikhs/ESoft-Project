@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EsoftDSV.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,13 @@ namespace EsoftDSV.View
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private static bool IfUser()
+        {
+            var currentUser = GetCurrent.CurrentUser;
+            var isManager = user10Entities.GetContext().Manager.Any(manager => manager.ID == currentUser.ID);
+            if (isManager) return true;
+            else return false;
+        }
         public LoginWindow()
         {
             InitializeComponent();
@@ -48,6 +56,7 @@ namespace EsoftDSV.View
             {
                 App.currentUser = currentUser;
 
+                GetCurrent.CurrentUser = currentUser;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();

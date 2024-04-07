@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Runtime;
 using EsoftDSV.View;
+using EsoftDSV.Class;
 
 namespace EsoftDSV
 {

@@ -1,8 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
-    
-    
 
     <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
         <Setter Property="Template">
@@ -120,6 +118,35 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <DataTemplate x:Key="RowCellStyle" DataType="DataGridCell">
+        <Border Background="#5E667A"
+                Height="40"
+                Margin="-6,0,0,0"
+                BorderThickness="0"
+                CornerRadius="10">
+            <TextBlock Foreground="#FFF"
+                       Margin="5">
+                <Run Text="Create date time: "
+                     FontFamily="/FontRubik/#Rubik Bold"/>
+                <Run Text="{Binding CreateDateTime}"
+                     FontFamily="/FontRubik/#Rubik Regular"/>
+                <Run Text="Deadline: "
+                     FontFamily="/FontRubik/#Rubik Bold"/>
+                <Run Text="{Binding Deadline}"
+                     FontFamily="/FontRubik/#Rubik Regular"/>
+                <LineBreak/>
+                <Run Text="Difficulty: "
+                     FontFamily="/FontRubik/#Rubik Bold"/>
+                <Run Text="{Binding Difficulty}"
+                     FontFamily="/FontRubik/#Rubik Regular"/>
+                <Run Text="Time: "
+                     FontFamily="/FontRubik/#Rubik Bold"/>
+                <Run Text="{Binding Time}"
+                     FontFamily="/FontRubik/#Rubik Regular"/>
+            </TextBlock>
+        </Border>
+    </DataTemplate>
     
     <!--Row Style-->
     
@@ -170,7 +197,8 @@
                             <DataGridDetailsPresenter Grid.Column="1"
                                                       Grid.Row="1"
                                                       SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                                      Visibility="{TemplateBinding DetailsVisibility}"/>
+                                                      Visibility="{TemplateBinding DetailsVisibility}"
+                                                      ContentTemplate="{DynamicResource RowCellStyle}"/>
                             
                             <DataGridRowHeader Grid.RowSpan="2"
                                                SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
@@ -184,6 +212,9 @@
         <Style.Triggers>
             <Trigger Property="IsNewItem" Value="True">
                 <Setter Property="Margin" Value="{Binding NewItemMargin, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="DetailsVisibility" Value="Visible"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -279,4 +310,5 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+    
 </ResourceDictionary>

@@ -12,6 +12,7 @@
     <Grid>
 
         <Border Background="{StaticResource mainColor012}"
+                x:Name="statusBorder"
                 Margin="10"
                 Width="530"
                 Height="50"

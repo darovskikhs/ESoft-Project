@@ -1,0 +1,129 @@
+﻿<Window x:Class="EsoftDSV.View.addEditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:local="clr-namespace:EsoftDSV.View"
+        mc:Ignorable="d"
+        Title="addEditUserWindow"
+        Height="290" Width="360"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="20"
+        Background="{StaticResource mainColor012}">
+
+        <StackPanel Margin="30"
+                Width="400"
+                Orientation="Vertical"
+                HorizontalAlignment="Left">
+
+            <TextBox x:Name="tboxMiddleName"
+                 Style="{DynamicResource tbAddEdit}"
+                 Tag="Middle name"
+                 Height="30" Width="300"
+                 Padding="10,0"
+                 FontFamily="/FontRubik/#Rubik Bold"
+                 FontSize="14"
+                 Foreground="#FFFFFF"
+                 HorizontalContentAlignment="Left"
+                 HorizontalAlignment="Left"
+                 VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                   Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxFirstName"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="First name"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxLastName"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Last name"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxLogin"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Login"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <TextBox x:Name="tboxPassword"
+                     Style="{DynamicResource tbAddEdit}"
+                     Tag="Password"
+                     Height="30" Width="300"
+                     Padding="10,0"
+                     FontFamily="/FontRubik/#Rubik Bold"
+                     FontSize="14"
+                     Foreground="#FFFFFF"
+                     HorizontalContentAlignment="Left"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"/>
+
+            <Separator Height="5"
+                       Visibility="Hidden"/>
+
+            <StackPanel Orientation="Horizontal"
+                    Height="30">
+
+                <Button x:Name="btnSave"
+                    Content="Save"
+                    Cursor="Hand"
+                    FontFamily="/FontRubik/#Rubik Bold"
+                    FontSize="14"
+                    Style="{StaticResource btnLogin}"
+                    Width="120"
+                    Click="btnSave_Click"/>
+
+                <Separator Width="10"
+                       Visibility="Hidden"/>
+
+                <Button x:Name="btnCancel"
+                    Content="Close"
+                    Cursor="Hand"
+                    FontFamily="/FontRubik/#Rubik Bold"
+                    FontSize="14"
+                    Style="{StaticResource btnCancel}"
+                    Width="120"
+                    Click="btnCancel_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Border>
+
+</Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EsoftDSV.Class;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,10 +22,32 @@ namespace EsoftDSV.View
     /// </summary>
     public partial class taskPage : Page
     {
+        private static bool IfUser()
+        {
+            var currentUser = GetCurrent.CurrentUser;
+            var isManager = user10Entities.GetContext().Manager.Any(manager => manager.ID == currentUser.ID);
+            if (isManager) return true;
+            else return false;
+        }
         public taskPage()
         {
             InitializeComponent();
-            dgTasks.ItemsSource = user10Entities.GetContext().Task.ToList();
+            if (IfUser() == false)
+            {
+                statusBorder.Visibility = Visibility.Hidden;
+                cbStatus.Visibility = Visibility.Hidden;
+                tbSearch.Visibility = Visibility.Hidden;
+                btnClear.Visibility = Visibility.Hidden;
+                btnAdd.Visibility = Visibility.Hidden;
+                btnEdit.Visibility = Visibility.Hidden;
+                btnDelete.Visibility = Visibility.Hidden;
+                dgTasks.ItemsSource = user10Entities.GetContext().Task.Where(p => p.ExecutorID == GetCurrent.CurrentUser.ID).ToList();
+            }
+            else
+            {
+                dgTasks.ItemsSource = user10Entities.GetContext().Task.ToList();
+            }
+            
         }
 
         private void LoadGrid()
